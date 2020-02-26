@@ -1,18 +1,3 @@
-.leaderboard {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: hsl(120, 90%, 90%);
-  overflow-y: auto;
-
-  .main {
-    max-width: 66.9rem;
-    padding: 1rem;
-    margin: 0 auto;
-    background-color: rgba(white, 0.618);
-    min-height: 10rem;
-  }
-}
-
 @mixin listRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,7 +11,7 @@
   }
 }
 
-.Game, .Category, .Runs {
+.Game, .Category {
   margin-bottom: 1rem;
   .header {
     @include listRow;
@@ -39,18 +24,6 @@
     pre.text {
       white-space: pre-wrap;
       word-wrap: break-word;
-    }
-  }
-}
-
-.Runs {
-  .header {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  .list .item {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    .guest {
-      color: red;
     }
   }
 }

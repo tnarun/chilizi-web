@@ -1,0 +1,34 @@
+@import "./mixins";
+
+.leaderboard {
+  @include main;
+}
+
+.Runs {
+  margin-bottom: 1rem;
+  .header {
+    @include listRow;
+    span {
+      background-color: rgba(black, 0.05);
+    }
+  }
+  .list .item {
+    @include listRow;
+    pre.text {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.Runs {
+  .header {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .list .item {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .guest {
+      color: red;
+    }
+  }
+}

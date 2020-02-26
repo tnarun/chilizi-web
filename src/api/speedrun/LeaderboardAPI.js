@@ -1,5 +1,7 @@
 const ENDPOINT = `//1246105.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/speedrun-api-directly/api`
 
+// GET /leaderboards/{game}/category/{category}
+// GET /leaderboards/{game}/level/{level}/{category}
 const get = async ({ game, level, category }) => {
   let path = _buildPath({ game, level, category })
   let res = await fetch(path)
@@ -7,8 +9,6 @@ const get = async ({ game, level, category }) => {
   return data
 }
 
-// GET /leaderboards/{game}/category/{category}
-// GET /leaderboards/{game}/level/{level}/{category}
 const _buildPath = ({ game, level, category }) => {
   let _params = {
     embed: 'game,category,players'

@@ -1,0 +1,22 @@
+@import "./mixins";
+
+.run {
+  @include main;
+}
+
+.Player {
+  margin-bottom: 1rem;
+  .header {
+    @include listRow;
+    span {
+      background-color: rgba(black, 0.05);
+    }
+  }
+  .list .item {
+    @include listRow;
+    pre.text {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+}

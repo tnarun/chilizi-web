@@ -1,7 +1,11 @@
+// title: leaderboard debug
+
 import React from 'react'
-import css from './leaderboard.scss'
+import css from './leaderboard-debug.scss'
 
 import leaderboardAPI from '../../api/speedrun/LeaderboardAPI'
+import { PlayerStore } from '../../api/speedrun/store'
+import { Game, Category } from '../../api/speedrun/components'
 
 class LeaderboardStore {
   constructor ({ game, level, category }) {
@@ -19,53 +23,7 @@ class LeaderboardStore {
       return p.id === id
     })[0]
 
-    return new PlayerStore({ data: player })
-  }
-}
-
-class PlayerStore {
-  constructor ({ data }) {
-    this.data = data
-  }
-
-  get name () {
-    try {
-      return this.data.names.international
-    } catch (e) {
-      return <span className={ css.guest }>guest</span>
-    }
-  }
-}
-
-class GameStore {
-  constructor ({ data }) {
-    this.data = data
-  }
-
-  get name () {
-    return this.data.names.international
-  }
-
-  get abbreviation () {
-    return this.data.abbreviation
-  }
-}
-
-class CategoryStore {
-  constructor ({ data }) {
-    this.data = data
-  }
-
-  get name () {
-    return this.data.name
-  }
-
-  get type () {
-    return this.data.type
-  }
-
-  get rules () {
-    return this.data.rules
+    return new PlayerStore({ data: player, css })
   }
 }
 
@@ -101,65 +59,6 @@ export default class leaderboard extends React.Component {
     let store = new LeaderboardStore({ game, category })
     await store.load()
     this.setState({ store })
-  }
-}
-
-class Game extends React.Component {
-  render () {
-    let { store } = this.props
-    let { game } = store.data
-
-    if (typeof(game) === 'string') {
-      return <div>Game: { game }</div>
-    }
-
-    let st = new GameStore({ data: game.data })
-
-    return <div className={ css.Game }>
-      <h3>游戏信息</h3>
-      <div className={ css.header }>
-        <span>属性</span><span>值</span>
-      </div>
-      <div className={ css.list }>
-        <div className={ css.item }>
-          <span>name</span><span>{ st.name }</span>
-        </div>
-        <div className={ css.item}>
-          <span>abbreviation</span><span>{ st.abbreviation }</span>
-        </div>
-      </div>
-    </div>
-  }
-}
-
-class Category extends React.Component {
-  render () {
-    let { store } = this.props
-    let { category } = store.data
-
-    if (typeof(category) === 'string') {
-      return <div>Category: { category }</div>
-    }
-
-    let st = new CategoryStore({ data: category.data })
-
-    return <div className={ css.Category }>
-      <h3>规则信息</h3>
-      <div className={ css.header }>
-        <span>属性</span><span>值</span>
-      </div>
-      <div className={ css.list }>
-        <div className={ css.item }>
-          <span>name</span><span>{ st.name }</span>
-        </div>
-        <div className={ css.item}>
-          <span>type</span><span>{ st.type }</span>
-        </div>
-        <div className={ css.item }>
-          <span>rules</span><span><pre className={ css.text }>{ st.rules }</pre></span>
-        </div>
-      </div>
-    </div>
   }
 }
 
