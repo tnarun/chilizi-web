@@ -1,0 +1,29 @@
+@import "../mixins";
+
+.Daily {
+  @include main;
+}
+
+.Stat {
+  margin-bottom: 2rem;
+}
+
+.DailyRuns {
+  .header {
+    @include listRow;
+    grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+    font-weight: bold;
+  }
+  .runs {
+    .item {
+      @include listRow;
+      grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+      span {
+        font-family: "DIN-Medium";
+        .sub {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
