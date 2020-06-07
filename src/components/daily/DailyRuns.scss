@@ -1,0 +1,124 @@
+$columns: 6fr 3fr 6em;
+$headerColor: lighten(cyan, 30%);
+$runnerColor: lighten(cyan, 30%);
+$timeColor: lighten(gold, 10%);
+$dateColor: lighten(coral, 10%);
+
+@mixin row {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-gap: .25em;
+  margin-bottom: .25em;
+  > span {
+    padding: (.25em / 0.9) (.5em / 0.9);
+    background-color: rgba(white, 0.1);
+    line-height: (1.5em / 0.9);
+    font-size: .9em;
+  }
+}
+
+.DailyRuns {
+  font-size: 2rem;
+  width: 80rem; // 1280px
+
+  margin-bottom: 1em;
+  padding: .25em .25em 0;
+  border: solid 1px rgba(white, 0.3);
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: (.25em / 1.2);
+    color: gold;
+    font-size: 1.2em;
+  }
+
+  .ldesc, .newNum {
+    margin-bottom: 1em;
+    color: white;
+    margin-bottom: .25em;
+  }
+  .newNum {
+    color: rgba(white, 0.6);
+  }
+
+  .header {
+    @include row;
+    font-weight: bold;
+    span {
+      border-left: solid (.25em / 0.9) $headerColor;
+      color: $headerColor;
+      background-color: rgba($headerColor, 0.2);
+    }
+  }
+
+  .runs {
+    $imgW: 4.5em;
+
+    .item {
+      a { color: white; }
+
+      margin-bottom: .25em;
+      @include row;
+
+      .info {
+        display: grid;
+        grid-template-columns: $imgW auto;
+        grid-gap: .25em;
+
+        .GameCover {
+          width: $imgW;
+          height: $imgW;
+          img {
+            width: $imgW;
+            height: $imgW;
+            display: block;
+          }
+        }
+  
+        .nameAndRule {
+          border: 0 none;
+          padding: .25em .5em;
+          background-color: rgba(white, 0.1);
+
+          .gName {
+            color: white;
+          }
+          .cDesc {
+            color: greenyellow;
+            .subC {
+              color: #6ca323;
+            }
+          }
+        }
+      }
+
+      .infoA {
+        border: 0 none;
+        border-left: solid .25em rgba(white, 0.3);
+        padding: .25em .5em;
+        background-color: rgba(white, 0.1);
+        a {
+          text-decoration: none;
+        }
+      }
+
+      .runnerName {
+        color: $runnerColor; word-break: break-all;
+      }
+
+      .runTime {
+        a { color: $timeColor; text-decoration: none; }
+      }
+
+      .runDate {
+        a { color: $dateColor; text-decoration: none; }
+      }
+
+      .leaderboardLength {
+        color: $headerColor;
+        font-size: 1.8em;
+      }
+    }
+  }
+}

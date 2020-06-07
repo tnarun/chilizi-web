@@ -1,4 +1,4 @@
-const ENDPOINT = `//1246105.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/speedrun-api-directly/api`
+const ENDPOINT = require('./endpoint').ENDPOINT
 
 // GET /leaderboards/{game}/category/{category}
 // GET /leaderboards/{game}/level/{level}/{category}

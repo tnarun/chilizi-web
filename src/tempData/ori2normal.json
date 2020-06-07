@@ -1,0 +1,58 @@
+[
+  {
+    "submitted": "2020-03-16T20:32:07Z",
+    "verifyDate": "2020-03-22T23:29:43Z",
+    "runner": "Nanjimao",
+    "rel": "user",
+    "time": 4111,
+    "duration": "PT1H8M31S"
+  },
+  {
+    "submitted": "2020-03-21T06:16:11Z",
+    "verifyDate": "2020-03-22T23:46:35Z",
+    "runner": "CovertMuffin",
+    "rel": "user",
+    "time": 3464,
+    "duration": "PT57M44S"
+  },
+  {
+    "submitted": "2020-03-25T18:35:31Z",
+    "verifyDate": "2020-03-25T20:27:26Z",
+    "runner": "Dedew",
+    "rel": "user",
+    "time": 3260,
+    "duration": "PT54M20S"
+  },
+  {
+    "submitted": "2020-03-26T23:07:56Z",
+    "verifyDate": "2020-03-27T01:58:48Z",
+    "runner": "Dedew",
+    "rel": "user",
+    "time": 2612,
+    "duration": "PT43M32S"
+  },
+  {
+    "submitted": "2020-04-02T03:32:03Z",
+    "verifyDate": "2020-04-02T03:46:29Z",
+    "runner": "ChioOnline",
+    "rel": "user",
+    "time": 2004,
+    "duration": "PT33M24S"
+  },
+  {
+    "submitted": "2020-04-02T16:15:16Z",
+    "verifyDate": "2020-04-04T17:05:30Z",
+    "runner": "Furiante",
+    "rel": "user",
+    "time": 1898,
+    "duration": "PT31M38S"
+  },
+  {
+    "submitted": "2020-04-05T16:20:39Z",
+    "verifyDate": "2020-04-06T15:09:39Z",
+    "runner": "ChioOnline",
+    "rel": "user",
+    "time": 1830,
+    "duration": "PT30M30S"
+  }
+]

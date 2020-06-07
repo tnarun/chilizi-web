@@ -1,0 +1,42 @@
+.ff7 {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: black;
+  color: white;
+  font-family: DIN-Black;
+  padding: 2rem;
+
+  .cs {
+    width: 800px;
+    border: solid 1px rgba(white, 1);
+  }
+}
+
+.Category {
+  .name {
+    color: coral;
+    background-color: rgba(white, 0.2);
+    padding: .3rem .5rem;
+  }
+}
+
+.Leaderboard {
+  background-color: rgba(gold, 0.1);
+  display: flex;
+  .vname {
+    padding: .3rem .5rem .3rem 1.5rem;
+    color: gold;
+    border-right: solid 1px gold;
+    width: 250px;
+  }
+  .ld {
+    color: cyan;
+    padding: .3rem .5rem;
+    width: 160px;
+    border-right: solid 1px cyan;
+  }
+  .time {
+    color: white;
+    padding: .3rem .5rem;
+  }
+}

@@ -18,6 +18,7 @@ class DailyStore {
 
     let res = await fetch(url)
     let data = await res.json()
+    console.log(data)
 
     this.data = data
       .map(x => new DailyItem(x))
@@ -95,6 +96,8 @@ export default class Daily extends React.Component {
   async componentDidMount () {
     await this.store.load()
     this.setState({ loaded: true })
+
+    window.document.title = `吃栗子 - ${ this.store.date }`
   }
 }
 

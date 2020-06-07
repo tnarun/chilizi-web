@@ -1,0 +1,18 @@
+$vw: 1920px;
+$vh: 1080px;
+
+$runnerColor: lighten(cyan, 30%);
+$timeColor: lighten(gold, 10%);
+$dateColor: lighten(coral, 10%);
+
+$headerColor: $runnerColor;
+
+$topTitleOff: $vw / 6; // 180px
+$leftOff: $topTitleOff / 2; // 90px
+$gap: 8px;
+$borderWidth: $gap;
+$levelSideW: $vw / 64 * 4; // 120px
+$levelSideSW: $levelSideW / 3 * 2; // 80px
+$levelHeaderW: $levelSideSW; // 80px
+
+$lbHeight: 138px; // 榜单行高

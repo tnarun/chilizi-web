@@ -1,0 +1,130 @@
+[
+  {
+    "submitted": "2020-03-13T21:27:09Z",
+    "verifyDate": "2020-03-22T23:25:54Z",
+    "runner": "Isaia",
+    "rel": "user",
+    "time": 3741,
+    "duration": "PT1H2M21S"
+  },
+  {
+    "submitted": "2020-03-14T23:33:22Z",
+    "verifyDate": "2020-03-22T23:26:45Z",
+    "runner": "CountCreep",
+    "rel": "user",
+    "time": 3652,
+    "duration": "PT1H52S"
+  },
+  {
+    "submitted": "2020-03-15T02:40:20Z",
+    "verifyDate": "2020-03-22T23:27:01Z",
+    "runner": "shedd",
+    "rel": "user",
+    "time": 3413,
+    "duration": "PT56M53S"
+  },
+  {
+    "submitted": "2020-03-16T01:21:07Z",
+    "verifyDate": "2020-03-22T23:29:02Z",
+    "runner": "TAS_Snoop",
+    "rel": "user",
+    "time": 3181,
+    "duration": "PT53M1S"
+  },
+  {
+    "submitted": "2020-03-17T22:18:29Z",
+    "verifyDate": "2020-03-22T23:35:03Z",
+    "runner": "TAS_Snoop",
+    "rel": "user",
+    "time": 2984,
+    "duration": "PT49M44S"
+  },
+  {
+    "submitted": "2020-03-18T20:10:13Z",
+    "verifyDate": "2020-03-22T23:42:46Z",
+    "runner": "TAS_Snoop",
+    "rel": "user",
+    "time": 2738,
+    "duration": "PT45M38S"
+  },
+  {
+    "submitted": "2020-03-20T02:50:15Z",
+    "verifyDate": "2020-03-22T23:43:11Z",
+    "runner": "Skylar",
+    "rel": "user",
+    "time": 2612,
+    "duration": "PT43M32S"
+  },
+  {
+    "submitted": "2020-03-22T23:04:26Z",
+    "verifyDate": "2020-03-22T23:54:00Z",
+    "runner": "ssjhenrik",
+    "rel": "user",
+    "time": 2452,
+    "duration": "PT40M52S"
+  },
+  {
+    "submitted": "2020-03-23T00:40:24Z",
+    "verifyDate": "2020-03-23T14:43:50Z",
+    "runner": "XepiccatX",
+    "rel": "user",
+    "time": 2222,
+    "duration": "PT37M2S"
+  },
+  {
+    "submitted": "2020-03-23T02:26:56Z",
+    "verifyDate": "2020-03-24T15:52:23Z",
+    "runner": "Skylar",
+    "rel": "user",
+    "time": 2203,
+    "duration": "PT36M43S"
+  },
+  {
+    "submitted": "2020-03-23T19:08:13Z",
+    "verifyDate": "2020-03-23T20:21:10Z",
+    "runner": "TAS_Snoop",
+    "rel": "user",
+    "time": 2073,
+    "duration": "PT34M33S"
+  },
+  {
+    "submitted": "2020-03-23T21:33:44Z",
+    "verifyDate": "2020-03-23T22:02:23Z",
+    "runner": "Ikewolf",
+    "rel": "user",
+    "time": 1651,
+    "duration": "PT27M31S"
+  },
+  {
+    "submitted": "2020-03-26T22:11:35Z",
+    "verifyDate": "2020-03-27T00:32:50Z",
+    "runner": "Ikewolf",
+    "rel": "user",
+    "time": 1530,
+    "duration": "PT25M30S"
+  },
+  {
+    "submitted": "2020-03-28T16:56:34Z",
+    "verifyDate": "2020-03-28T18:24:40Z",
+    "runner": "Ikewolf",
+    "rel": "user",
+    "time": 1410,
+    "duration": "PT23M30S"
+  },
+  {
+    "submitted": "2020-04-04T17:23:22Z",
+    "verifyDate": "2020-04-05T14:58:43Z",
+    "runner": "Ikewolf",
+    "rel": "user",
+    "time": 1353,
+    "duration": "PT22M33S"
+  },
+  {
+    "submitted": "2020-04-06T22:53:30Z",
+    "verifyDate": "2020-04-07T02:21:08Z",
+    "runner": "SiriusAshling",
+    "rel": "user",
+    "time": 1327,
+    "duration": "PT22M7S"
+  }
+]

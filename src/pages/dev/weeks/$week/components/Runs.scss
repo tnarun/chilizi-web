@@ -1,0 +1,119 @@
+@import "./vars";
+
+$cols: 3fr 1.5fr 1fr;
+
+.page {
+  position: absolute;
+  top: 0; left: 84%;
+  margin-left: 1em;
+  margin-top: .5em;
+  font-size: 1.8em;
+  label {
+    color: $headerColor;
+  }
+}
+
+.Runs {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  $p: .84;
+
+  .header {
+    display: grid;
+    grid-template-columns: $cols;
+    grid-gap: $gap;
+    height: $levelHeaderW;
+
+    span {
+      font-weight: bold;
+      border-left: solid $borderWidth $headerColor;
+      color: $headerColor;
+      background-color: rgba($headerColor, 0.2);
+      font-size: 1.8em;
+      display: flex;
+      align-items: center;
+      padding-left: .5em;
+    }
+
+    &.h1 {
+      font-size: #{$p}em;
+      height: $levelHeaderW * $p;
+      width: percentage($p);
+    }
+  }
+
+  .rs1 {
+    font-size: #{$p}em;
+    width: percentage($p);
+
+    .Run {
+      $h: $lbHeight * $p;
+      height: $h;
+      .GameCover img {
+        width: $h;
+      }
+    }
+  }
+}
+
+.Run {
+  height: $lbHeight;
+  margin-top: $gap;
+  display: grid;
+  grid-template-columns: $cols;
+  grid-gap: $gap;
+  font-size: 1.8em;
+
+  .RunInfo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: $gap;
+
+    .GameCover {
+      img {
+        display: block;
+        width: $lbHeight;
+      }
+    }
+
+    .nameAndRule {
+      background-color: #222;
+      padding: .25em .5em;
+      flex: 1;
+      .cDesc {
+        color: greenyellow;
+        .subC {
+          color: #6ca323;
+        }
+      }
+    }
+  }
+
+  .infoA {
+    border: 0 none;
+    border-left: solid $borderWidth rgba(white, 0.3);
+    padding: .25em .5em;
+    background-color: rgba(white, 0.1);
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .runnerName {
+    color: $runnerColor; word-break: break-all;
+  }
+
+  .runTime {
+    a { color: $timeColor; text-decoration: none; }
+  }
+
+  .runDate {
+    a { color: $dateColor; text-decoration: none; }
+  }
+
+  .leaderboardLength {
+    color: $headerColor;
+    font-size: 1.8em;
+  }
+}

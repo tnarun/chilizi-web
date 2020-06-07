@@ -1,4 +1,4 @@
-const ENDPOINT = `https://1246105.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/speedrun-api-directly/api`
+const ENDPOINT = require('./endpoint').ENDPOINT
 
 const get = async ({ path }) => {
   let url = `${ENDPOINT}${path}`

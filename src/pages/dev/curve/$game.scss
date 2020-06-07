@@ -1,0 +1,41 @@
+.Game {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.CategoriesTab {
+  border-right: solid 1px #ddd;
+  .tab {
+    border-bottom: solid 1px #ddd;
+    background-color: rgba(black, 0.05);
+    padding: .3rem .5rem;
+    display: block;
+    font-size: .8rem;
+    &:hover {
+      background-color: #555;
+      color: white;
+      cursor: pointer;
+    }
+    &.selected {
+      background-color: #555;
+      color: white;
+      cursor: pointer;
+      border-left: solid 3px red;
+    }
+  }
+}
+
+.Variables {
+  .var {
+    border-bottom: solid 1px #ddd;
+    span {
+      font-size: .8rem;
+      padding: .3rem .5rem;
+      border-right: solid 1px #ddd;
+      background-color: rgba(black, 0.05);
+      display: inline-block;
+    }
+  }
+}

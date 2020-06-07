@@ -1,0 +1,81 @@
+@import "./vars";
+
+.layout {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: $levelSideW 1fr;
+  grid-gap: $gap;
+}
+
+.Levels {
+  $A: #2e9cd5;
+  $B: #619f2e;
+  $C: #cab41e;
+  $D: #d27728;
+  $E: #be443c;
+  $Z: #7556ab;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  label {
+    width: $levelSideSW; height: $levelSideSW;
+    display: grid;
+    margin-bottom: $gap;
+    span {
+      display: flex;
+      font-size: 3em;
+      justify-content: center;
+      align-items: center;
+      font-family: 'DIN-Black';
+    }
+    &.A span { background-color: $A; }
+    &.B span { background-color: $B; }
+    &.C span { background-color: $C; }
+    &.D span { background-color: $D; }
+    &.E span { background-color: $E; }
+    &.Z span { background-color: $Z; }
+    opacity: 0.382;
+    &.active {
+      opacity: 1;
+      pointer-events: none;
+      width: $levelSideW; height: $levelSideW;
+      font-size: 1.5em;
+    }
+    cursor: pointer;
+  }
+}
+
+.LevelDesc {
+  display: grid;
+  grid-template-rows: $levelSideSW 1fr;
+  grid-gap: $gap;
+  .desc {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: $gap;
+    .inner {
+      flex: 1;
+      background-color: #222;
+      display: flex;
+      align-items: center;
+      padding-left: 1em;
+      span {
+        font-size: 1.8em;
+        label {
+          color: $headerColor;
+        }
+        label.n {
+          color: gold;
+        }
+      }
+    }
+  }
+
+  .main {
+    position: relative;
+    // * { opacity: 0;}
+    // background-color: coral;
+  }
+}

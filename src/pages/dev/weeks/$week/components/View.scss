@@ -1,0 +1,52 @@
+@import "./vars";
+
+.WeekReport {
+  position: fixed;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background-color: #333;
+  font-size: 1rem;
+  color: white;
+  font-family: 'DIN-Medium', '微软雅黑';
+
+  * {
+    box-sizing: border-box;
+  }
+
+  $titleH: 64px;
+
+  .title {
+    position: absolute;
+    top: 0; left: 0;
+    width: $vw; height: $titleH;
+
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    border-bottom: solid 1px cyan;
+    span {
+      font-size: 2em;
+    }
+  }
+  .view {
+    position: absolute;
+    width: $vw; height: $vh;
+    top: $titleH; left: 0;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 3fr 58fr 3fr;
+    grid-template-rows: 8fr 25fr 3fr; 
+    .main {
+      grid-column: 2;
+      grid-row: 2;
+      display: grid;
+      // background-color: red;
+      // * {opacity: 0;}
+    }
+
+    &.type-leaderboard {
+      grid-template-columns: 11fr 50fr 3fr;
+      grid-template-rows: 3fr 30fr 3fr; 
+    }
+  }
+}

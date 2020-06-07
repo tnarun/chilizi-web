@@ -1,0 +1,65 @@
+[
+  {
+    "id": "w20z0z8d",
+    "name": "PSX Disc",
+    "subs": [
+      {
+        "id": "9l754781",
+        "name": "Platform (Sub-Category)",
+        "values": {
+          "5lm5zmqv": "Any%",
+          "4lx5v731": "Any% No Slots",
+          "jq6yzjv1": "Any% No Slots (turbo)",
+          "0q54xnvl": "JP INT Any%",
+          "zqo4wx1y": "All Bosses No Slots"
+        }
+      }
+    ]
+  },
+  {
+    "id": "vdo464y2",
+    "name": "PC",
+    "subs": [
+      {
+        "id": "ql6rkwl9",
+        "name": "Category",
+        "values": {
+          "814ox20q": "Any% (30 FPS)",
+          "5q84jm6l": "No Slots/No Warps (30 FPS)",
+          "21gyykm1": "NG+ (30 FPS)",
+          "4lx5xy21": "Any% (Free FPS)",
+          "0q5vo2ml": "No Slots/No Warps (Free FPS)",
+          "5q8y73ld": "NG+ (Free FPS)",
+          "8104e2lv": "All Bosses No Slots"
+        }
+      }
+    ]
+  },
+  {
+    "id": "wdmq0q52",
+    "name": "PSX Digital",
+    "subs": [
+      {
+        "id": "6njk75l4",
+        "name": "Platform (Sub-Category)",
+        "values": {
+          "814o50eq": "Any% No Slots"
+        }
+      }
+    ]
+  },
+  {
+    "id": "9kvxowe2",
+    "name": "PS4 / Switch / Xbox One",
+    "subs": [
+      {
+        "id": "wlegren6",
+        "name": "Category",
+        "values": {
+          "xqkerznq": "Any%",
+          "p12vr7vq": "Any% No Slots"
+        }
+      }
+    ]
+  }
+]

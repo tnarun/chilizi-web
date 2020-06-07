@@ -1,20 +1,15 @@
 import React from 'react'
 import css from './$id.scss'
 
+// import RunInfo from '../../../components/RunInfo'
+import RunBrief from '../../../components/RunBrief'
+// import RunInfoSquare from '../../../components/RunInfoSquare'
+
 import getRunDetail from '../../../api/speedrun/getRunDetail'
 import SpeedrunUtils from "speedrun-utils"
 
 const { RunData, GameData, LeaderboardData } = SpeedrunUtils.data
-
-const encn = (abbr) => {
-  let name = {
-    'bloodborne': '血源诅咒',
-    'ff7r': '最终幻想 7 重制版',
-    'tr2': '古墓丽影 2'
-  }[abbr]
-
-  return name ? name : abbr
-}
+const time = SpeedrunUtils.time
 
 class RunDetailStore {
   constructor ({ id }) {
@@ -47,15 +42,19 @@ export default class  extends React.Component {
   render () {
     if (!this.state.loaded) {
       return <div className={ css.run }>
-        <div className={ css.main }>loading</div>
+        loading
       </div>
     }
 
     return <div className={ css.run }>
-      <div className={ css.main }>
-        <Header store={ this.store } />
+      <div className={ css.main1 }>
+        {/* <RunInfoSquare store={ this.store } /> */}
+        <RunBrief store={ this.store } />
       </div>
-      <div className={ css.main }>
+      <div className={ css.main1 }>
+        <PPTStr store={ this.store } />
+      </div>
+      <div className={ css.main1 }>
         <BiliDesc store={ this.store } />
       </div>
     </div>
@@ -65,64 +64,6 @@ export default class  extends React.Component {
     await this.store.load()
     console.log(this.store.data)
     this.setState({ loaded: true })
-  }
-}
-
-class Header extends React.Component {
-  render () {
-    let store = this.props.store
-
-    let run1st = store.leaderboard.getRunDataByIndex(0)
-    let run2nd = store.leaderboard.getRunDataByIndex(1)
-    let run3rd = store.leaderboard.getRunDataByIndex(2)
-
-    return <div className={ css.Header }>
-      <div className={ css.cover }>
-        <img src={ store.game.coverHKURL } alt='cover' />
-      </div>
-
-      <div className={ css.infos }>        
-        <div className={ css.info }>
-          <span className={ css.name }>{ encn(store.game.abbreviation) } - { store.game.name }</span>
-          <span className={ css.category }>{ store.run.fullCategoryDesc }</span>
-        </div>
-        <div className={ css.total }>
-          <span>榜单总人数: { store.leaderboard.runs.length }</span>
-        </div>
-        <div className={ css.mingci }>
-          <div className={ css.m1 }>
-            <label>
-              <span>第</span><span className={ css.n }>1</span><span>名</span>
-            </label>
-            <div className={ css.data }>
-              <div className={ css.time }>{ run1st.timeStr }</div>
-              <div className={ css.runner }>{ run1st.runnersName }</div>
-              <div className={ css.date }>{ run1st.date }</div>
-            </div>
-          </div>
-          <div className={ css.m2 }>
-            <label>
-              <span>第</span><span className={ css.n }>2</span><span>名</span>
-            </label>
-            <div className={ css.data }>
-              <div className={ css.time }>{ run2nd.timeStr }</div>
-              <div className={ css.runner }>{ run2nd.runnersName }</div>
-              <div className={ css.date }>{ run2nd.date }</div>
-            </div>
-          </div>
-          <div className={ css.m3 }>
-            <label>
-              <span>第</span><span className={ css.n }>3</span><span>名</span>
-            </label>
-            <div className={ css.data }>
-              <div className={ css.time }>{ run3rd.timeStr }</div>
-              <div className={ css.runner }>{ run3rd.runnersName }</div>
-              <div className={ css.date }>{ run3rd.date }</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   }
 }
 
@@ -136,17 +77,94 @@ class BiliDesc extends React.Component {
     let run3 = store.leaderboard.getRunDataByIndex(2)
 
     return <div className={ css.BiliDesc }>
+      <pre>{ run.videoTitle }</pre>
+
       <h3>当前 run</h3>
       <pre>{ run.detailDesc }</pre>
 
       <h3>第一名</h3>
       <pre>{ run1.detailDesc }</pre>
 
-      <h3>第二名</h3>
-      <pre>{ run2.detailDesc }</pre>
+      {
+        run2 ? <>
+          <h3>第二名</h3>
+          <pre>{ run2.detailDesc }</pre>
+        </> : null
+      }
 
-      <h3>第三名</h3>
-      <pre>{ run3.detailDesc }</pre>
+      {
+        run3 ? <>
+          <h3>第三名</h3>
+          <pre>{ run3.detailDesc }</pre>
+        </> : null
+      }
+
+      <SimpleHistory run={ run1 } />
+    </div>
+  }
+}
+
+class SimpleHistory extends React.Component {
+  render () {
+    let _history = this.state.history.map(x => {
+      // let s = x.submitted ? moment(x.submitted).utcOffset(8).format('YYYY-MM-DD') : ''
+      let s = x.date
+
+      return <div className={ css.line } key={ x.runId }>
+        <span className={ css.time }>{ time.playTimeStr(x.duration) }</span>
+        <span className={ css.runner }>{ x.runner }</span>
+        <span className={ css.date }>{ s }</span>
+      </div>
+    })
+
+    let { run } = this.props
+
+    return <div className={ css.SimpleHistory }>
+      <h3>{ run.gameName } - { run.fullCategoryDesc }</h3>
+      <h3>最佳成绩更新历史 (共 { _history.length } 个)</h3>
+      <div className={ css.head }>
+        <span className={ css.timeH }>时长</span>
+        <span className={ css.runnerH }>Runner</span>
+        <span className={ css.dateH }>提交日期</span>
+      </div>
+      { _history }
+    </div>
+  }
+
+  state = {
+    history: []
+  }
+
+  async componentDidMount () {
+    let url = this.props.run.simpleHistoryOSSURL
+    let res = await fetch(url)
+    let data = await res.json()
+    this.setState({ history: data })
+  }
+}
+
+class PPTStr extends React.Component {
+  render () {
+    let { store } = this.props
+    let run = store.run
+
+    return <div className={ css.PPTStr }>
+      <div className={ css.c }>
+        <span>{ run.categoryName }</span>
+        {
+          run.subCategorieNames ? <>
+            <span className={ css.subC }> - </span>
+            <span className={ css.subC }>{ run.subCategorieNames }</span>
+          </> : null
+        }
+      </div>
+      <div>
+        <span className={ css.time }>{ run.timeStr }</span>
+        <span> by </span>
+        <span className={ css.runner }>{ run.runnersName }</span>
+        <span> on </span>
+        <span className={ css.date }>{ run.date }</span>
+      </div>
     </div>
   }
 }
